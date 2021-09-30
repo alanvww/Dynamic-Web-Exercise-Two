@@ -18,14 +18,14 @@ function WeatherCard({
 				</p>
 				<p>
 					Current Temperature:
-					<strong className="highlightedData">{currentTemp}°</strong>
+					<strong className="highlightedData">{currentTemp}°C</strong>
 				</p>
 			</div>
 
 			<div className="CurrentTempWrapper">
 				<p>
 					<strong className="highlightedData">
-						From {lowTemp}° to {highTemp}°{' '}
+						{lowTemp}°C - {highTemp}°C
 					</strong>
 				</p>
 			</div>
@@ -33,13 +33,13 @@ function WeatherCard({
 				Cloudiness: <strong>{cloudiness}</strong>
 			</p>
 			<p>
-				WeatherType: <strong>{humidity}</strong>
+				Humidity: <strong>{humidity}</strong>
 			</p>
 			<p>
 				WeatherType: <strong>{lowTemp}</strong>
 			</p>
 			<p>
-				WeatherType: <strong>{windSpeed}</strong>
+				Wind Speed: <strong>{windSpeed}mph</strong>
 			</p>
 		</section>
 	);

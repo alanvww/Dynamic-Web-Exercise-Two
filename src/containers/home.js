@@ -1,36 +1,90 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useEffect, useState } from 'react';
+import { useLocation } from 'react-router';
+import axios from 'axios';
 import WeatherCard from '../components/WeatherCard';
 
+const API_KEY = `70b0bdefd6b84baa7449b2155d0dd184`;
+
+// URL Search Params... localhost:3000/?city=paris
+//abstract away URL Search Params here to make it easier to use
+function useQuery() {
+	return new URLSearchParams(useLocation().search);
+}
+
 function Home() {
+	const [city, setCity] = useState();
+	const [weatherData, setWeatherData] = useState();
+
+	let query = useQuery();
+
+	const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
+
+	useEffect(() => {
+		const cityValue = query.get('city');
+		setCity(cityValue);
+	}, [query]);
+
+	useEffect(() => {
+		// Get weather data from weather API
+		if (city) {
+			// Make a request for a user with a given ID
+			axios
+				.get(URL)
+				.then(function (response) {
+					// handle success
+					setWeatherData(response.data);
+					console.log(response);
+				})
+				.catch(function (error) {
+					// handle error
+					console.log(error);
+				});
+		}
+	}, [URL, city]);
+
 	const {
 		cloudiness,
 		currentTemp,
 		highTemp,
 		humidity,
 		lowTemp,
+		weatherDescription,
 		weatherType,
 		windSpeed,
 	} = useMemo(() => {
 		// This is where we process data
+		if (!weatherData) return {};
 		return {
-			cloudiness: 100,
-			currentTemp: `76`,
-			highTemp: `80`,
-			humidity: 100,
-			lowTemp: `70`,
-			weatherType: 'Cloudy',
-			windSpeed: `10mph`,
+			cloudiness: weatherData.clouds.all,
+			currentTemp: Math.round(weatherData.main.temp - 273.15),
+			highTemp: Math.round(weatherData.main.temp_max - 273.15),
+			humidity: weatherData.main.humidity,
+			lowTemp: Math.round(weatherData.main.temp_min - 273.15),
+			weatherDescription: weatherData.weather[0].description,
+			weatherType: weatherData.weather[0].main,
+			windSpeed: weatherData.wind.speed,
 		};
-	}, []);
+	}, [weatherData]);
+
 	return (
 		<main className="App">
-			<header className="AppTitle">Weather App</header>
+			<header className="AppTitle">
+				<p>
+					<a href="/?city=paris">Paris</a>
+				</p>
+
+				<p>
+					<a href="/?city=tokyo">Tokyo</a>
+				</p>
+			</header>
+			<h1>{city}</h1>
 			<WeatherCard
 				cloudiness={cloudiness}
 				currentTemp={currentTemp}
 				highTemp={highTemp}
 				humidity={humidity}
 				lowTemp={lowTemp}
+				weatherDescription={weatherDescription}
 				weatherType={weatherType}
 				windSpeed={windSpeed}
 			/>
