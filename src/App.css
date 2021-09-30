@@ -1,0 +1,35 @@
+.App {
+	margin: 0 auto;
+	max-width: 1080px;
+	padding: 0 25px;
+}
+
+.AppTitle {
+	font-size: 40px;
+	font-weight: bold;
+	margin: 25px 25px;
+	text-align: center;
+}
+
+.WeatherCard {
+	border: 1px solid black;
+	border-radius: 8px;
+}
+
+.CurrentTempWrapper {
+	align-items: flex-start;
+	display: flex;
+	flex-direction: row;
+	margin: 0 auto;
+	margin-top: 25px;
+	margin-bottom: 25px;
+	max-width: 800px;
+	justify-content: flex-start;
+}
+
+.DetailsWrapper {
+}
+
+.highlightedData {
+	font-size: 100px;
+}
