@@ -68,16 +68,31 @@ function Home() {
 
 	return (
 		<main className="App">
-			<header className="AppTitle">
-				<p>
-					<a href="/?city=paris">Paris</a>
-				</p>
-
-				<p>
-					<a href="/?city=tokyo">Tokyo</a>
-				</p>
+			<header>
+				<nav>
+					<ul className="cityList">
+						<li>
+							<a href="/?city=osaka">Osaka</a>
+						</li>
+						<li>
+							<a href="/?city=chicago">Chicago</a>
+						</li>
+						<li>
+							<a href="/?city=hongkong">Hongkong</a>
+						</li>
+						<li>
+							<a href="/?city=London">London</a>
+						</li>
+						<li>
+							<a href="/?city=Chengdu">Chengdu</a>
+						</li>
+						<li>
+							<a href="/?city=Chongqing">Chongqing</a>
+						</li>
+					</ul>
+				</nav>
+				<h1 className="Location">{city}</h1>
 			</header>
-			<h1>{city}</h1>
 			<WeatherCard
 				cloudiness={cloudiness}
 				currentTemp={currentTemp}
