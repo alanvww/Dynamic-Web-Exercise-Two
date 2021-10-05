@@ -56,7 +56,8 @@ body {
 }
 
 .cityList li a:hover {
-	background-color: #486ad842;
+	background-color: #2e2e2e;
+	mix-blend-mode: color-dodge;
 	border: none 1px;
 	border-radius: 20px;
 }
@@ -101,11 +102,8 @@ body {
 
 .WeatherIcon {
 	display: flex;
-	align-items: center;
-	font-size: 150px;
-	justify-content: center;
-	text-align: center;
-	background: none;
-	margin-right: 10px;
-	margin-left: 20px;
+	float: right;
+	padding: 0 25px;
+	font-size: 100px;
+	margin-left: -500px;
 }

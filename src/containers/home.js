@@ -3,6 +3,7 @@ import { useLocation } from 'react-router';
 import axios from 'axios';
 import WeatherCard from '../components/WeatherCard';
 import { API_KEY } from '../components/API_KEY';
+import WeatherImage from '../components/WeatherImage';
 
 // URL Search Params... localhost:3000/?city=paris
 //abstract away URL Search Params here to make it easier to use
@@ -106,6 +107,10 @@ function Home() {
 						</li>
 					</ul>
 				</nav>
+				<section className="WeatherIcon">
+					<WeatherImage weatherType={weatherType} />
+				</section>
+
 				<h1 className="Location">{city}</h1>
 			</header>
 			<WeatherCard
