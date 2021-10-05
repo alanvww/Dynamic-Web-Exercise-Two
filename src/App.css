@@ -62,10 +62,10 @@ body {
 }
 
 .Location {
-	font-size: 45px;
+	font-size: 80px;
 	font-weight: bold;
-	margin: 25px;
-	padding-left: 10px;
+	margin: 10px;
+	padding-left: 20px;
 	text-align: left;
 	text-transform: capitalize;
 }
@@ -83,7 +83,7 @@ body {
 	border: none 1px;
 	border-radius: 30px;
 	flex: 1 1 auto;
-	margin: 20px;
+	margin: 10px;
 	background: rgba(199, 199, 199, 0.15);
 	backdrop-filter: blur(10px);
 	padding: 30px;

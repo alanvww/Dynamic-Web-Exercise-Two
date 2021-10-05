@@ -105,14 +105,6 @@ function Home() {
 								Chengdu
 							</a>
 						</li>
-						<li>
-							<a
-								href="/?city=Chongqing"
-								className={city === 'Chongqing' && 'Active'}
-							>
-								Chongqing
-							</a>
-						</li>
 					</ul>
 				</nav>
 				<h1 className="Location">{city}</h1>
