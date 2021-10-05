@@ -14,11 +14,11 @@ function WeatherCard({
 	return (
 		<section className="WeatherCard">
 			<div className="container">
-				<section className="item WeatherIcon">
-					<WeatherImage weatherType={weatherType} />
-				</section>
 				<section className="item">
 					<h2>Current Weather</h2>
+					<section className="WeatherIcon">
+						<WeatherImage weatherType={weatherType} />
+					</section>
 					<strong className="highlightedData">{weatherType}</strong>
 				</section>
 				<section className="item">
