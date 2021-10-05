@@ -1,3 +1,15 @@
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
 .App {
 	margin: 0 auto;
 	max-width: 1080px;
@@ -6,18 +18,16 @@
 }
 
 body {
-	background: rgb(34, 193, 195);
-	background: linear-gradient(
-		0deg,
-		rgba(34, 193, 195, 1) 0%,
-		rgba(253, 187, 45, 1) 100%
-	);
+	background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+	background-size: 400% 400%;
+	animation: gradient 15s ease infinite;
 }
 
 .cityList {
+	display: flex;
 	list-style-type: none;
 	margin: 0;
-	padding: 0;
+	padding: 20px 0;
 	overflow: hidden;
 }
 
@@ -26,28 +36,36 @@ body {
 }
 
 .cityList li a {
-	display: block;
-	padding: 8px;
 	background-color: #ffffff00;
-	font-size: large;
-	font-weight: bold;
-	text-decoration: none;
 	color: white;
+	display: block;
+	font-size: large;
+	font-weight: normal;
+	padding: 8px;
+	text-decoration: none;
 }
 
 .cityList li a:visited {
 	color: white;
 }
 
+.cityList li a .Active {
+	color: rgb(35, 0, 133);
+	font-weight: bold;
+}
+
 .cityList li a:hover {
-	background-color: #a4f39d;
+	background-color: #486ad842;
+	border: none 1px;
+	border-radius: 20px;
 }
 
 .Location {
-	font-size: 75px;
+	font-size: 45px;
 	font-weight: bold;
-	margin: 25px 25px;
-	text-align: center;
+	margin: 25px;
+	padding-left: 10px;
+	text-align: left;
 	text-transform: capitalize;
 }
 
@@ -64,10 +82,11 @@ body {
 	border: none 1px;
 	border-radius: 30px;
 	flex: 1 1 auto;
-	margin: 36px;
-	background: rgba(139, 139, 139, 0.11);
-	backdrop-filter: blur(20px);
+	margin: 20px;
+	background: rgba(199, 199, 199, 0.15);
+	backdrop-filter: blur(10px);
 	padding: 30px;
+	padding-top: 15px;
 }
 
 .item h2 {
@@ -76,5 +95,14 @@ body {
 }
 
 .highlightedData {
-	font-size: 60px;
+	font-size: 50px;
+}
+
+.WeatherIcon {
+	display: flex;
+	align-items: center;
+	font-size: 150px;
+	justify-content: center;
+	text-align: center;
+	background: none;
 }

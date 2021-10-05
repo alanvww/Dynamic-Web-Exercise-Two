@@ -72,22 +72,46 @@ function Home() {
 				<nav>
 					<ul className="cityList">
 						<li>
-							<a href="/?city=osaka">Osaka</a>
+							<a href="/?city=osaka" className={city === 'osaka' && 'Active'}>
+								Osaka
+							</a>
 						</li>
 						<li>
-							<a href="/?city=chicago">Chicago</a>
+							<a
+								href="/?city=chicago"
+								className={city === 'chicago' && 'Active'}
+							>
+								Chicago
+							</a>
 						</li>
 						<li>
-							<a href="/?city=hongkong">Hongkong</a>
+							<a
+								href="/?city=hongkong"
+								className={city === 'hongkong' && 'Active'}
+							>
+								Hongkong
+							</a>
 						</li>
 						<li>
-							<a href="/?city=London">London</a>
+							<a href="/?city=London" className={city === 'London' && 'Active'}>
+								London
+							</a>
 						</li>
 						<li>
-							<a href="/?city=Chengdu">Chengdu</a>
+							<a
+								href="/?city=Chengdu"
+								className={city === 'Chengdu' && 'Active'}
+							>
+								Chengdu
+							</a>
 						</li>
 						<li>
-							<a href="/?city=Chongqing">Chongqing</a>
+							<a
+								href="/?city=Chongqing"
+								className={city === 'Chongqing' && 'Active'}
+							>
+								Chongqing
+							</a>
 						</li>
 					</ul>
 				</nav>
