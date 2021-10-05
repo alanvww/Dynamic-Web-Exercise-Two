@@ -2,8 +2,7 @@ import React, { useMemo, useEffect, useState } from 'react';
 import { useLocation } from 'react-router';
 import axios from 'axios';
 import WeatherCard from '../components/WeatherCard';
-
-const API_KEY = `70b0bdefd6b84baa7449b2155d0dd184`;
+import { API_KEY } from '../components/API_KEY';
 
 // URL Search Params... localhost:3000/?city=paris
 //abstract away URL Search Params here to make it easier to use

@@ -99,7 +99,6 @@ body {
 	font-size: 50px;
 }
 
-/***
 .WeatherIcon {
 	display: flex;
 	align-items: center;
@@ -107,12 +106,6 @@ body {
 	justify-content: center;
 	text-align: center;
 	background: none;
-}
-***/
-
-.WeatherIcon {
-	display: flex;
-	float: right;
-	font-size: 100px;
-	margin-top: -50px;
+	margin-right: 10px;
+	margin-left: 20px;
 }
