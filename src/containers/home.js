@@ -107,11 +107,26 @@ function Home() {
 						</li>
 					</ul>
 				</nav>
-				<section className="WeatherIcon">
+				<h1
+					className="Location"
+					style={{
+						textShadow: `0 0 10px rgb(${255 - cloudiness},${255 - cloudiness},${
+							255 - cloudiness
+						})`,
+					}}
+				>
+					{city}
+				</h1>
+				<section
+					className="WeatherIcon"
+					style={{
+						color: `rgba(${255 - cloudiness / 2},${255 - cloudiness / 2},${
+							255 - cloudiness / 2
+						},1`,
+					}}
+				>
 					<WeatherImage weatherType={weatherType} />
 				</section>
-
-				<h1 className="Location">{city}</h1>
 			</header>
 			<WeatherCard
 				cloudiness={cloudiness}

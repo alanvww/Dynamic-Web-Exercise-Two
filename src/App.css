@@ -38,7 +38,7 @@ body {
 .cityList li a {
 	background-color: #ffffff00;
 	color: white;
-	display: block;
+	display: inline;
 	font-size: large;
 	font-weight: normal;
 	padding: 8px;
@@ -63,6 +63,7 @@ body {
 }
 
 .Location {
+	display: inline-flex;
 	font-size: 80px;
 	font-weight: bold;
 	margin: 10px;
@@ -101,9 +102,54 @@ body {
 }
 
 .WeatherIcon {
-	display: flex;
+	display: inline-flex;
+	justify-content: right;
+	align-items: right;
 	float: right;
 	padding: 0 25px;
 	font-size: 100px;
-	margin-left: -500px;
+}
+
+@media (max-width: 800px) {
+	/*
+		General rule:
+			so long as the min-width of the browser windows > value: desktop style
+
+			so long as the max-width of the browser windows > value: mobile style
+
+	*/
+
+	.Location {
+		display: flex;
+		align-items: left;
+		justify-content: center;
+		font-size: 80px;
+		padding-left: 0px;
+	}
+
+	.cityList {
+		width: 100%;
+	}
+
+	.cityList li a {
+		display: flex;
+		flex-direction: column;
+		align-items: stretch;
+		justify-content: space-around;
+	}
+
+	.cityList li {
+		display: block;
+		text-align: center;
+	}
+
+	.WeatherIcon {
+		display: flex;
+		justify-content: center;
+		align-items: left;
+		float: none;
+		font-size: 20vmax;
+		padding: auto;
+		margin: 5%;
+	}
 }
