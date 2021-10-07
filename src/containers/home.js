@@ -66,22 +66,26 @@ function Home() {
 		};
 	}, [weatherData]);
 
+	if (document.getElementById('copyright')) {
+		const copyright =
+			`Made by <a href="mailto:alan.ren@pm.me">@Alan Ren</a> &copy;` +
+			new Date().getFullYear();
+		document.getElementById('copyright').innerHTML = copyright;
+	}
+
 	return (
 		<main className="App">
 			<header>
 				<nav>
 					<ul className="cityList">
 						<li>
-							<a
-								href="Dynamic-Web-Exercise-Two/?city=osaka"
-								className={city === 'osaka' && 'Active'}
-							>
+							<a href="/?city=osaka" className={city === 'osaka' && 'Active'}>
 								Osaka
 							</a>
 						</li>
 						<li>
 							<a
-								href="Dynamic-Web-Exercise-Two/?city=chicago"
+								href="/?city=chicago"
 								className={city === 'chicago' && 'Active'}
 							>
 								Chicago
@@ -89,23 +93,20 @@ function Home() {
 						</li>
 						<li>
 							<a
-								href="Dynamic-Web-Exercise-Two/?city=hongkong"
+								href="/?city=hongkong"
 								className={city === 'hongkong' && 'Active'}
 							>
 								Hongkong
 							</a>
 						</li>
 						<li>
-							<a
-								href="Dynamic-Web-Exercise-Two/?city=London"
-								className={city === 'London' && 'Active'}
-							>
+							<a href="/?city=London" className={city === 'London' && 'Active'}>
 								London
 							</a>
 						</li>
 						<li>
 							<a
-								href="Dynamic-Web-Exercise-Two/?city=Chengdu"
+								href="/?city=Chengdu"
 								className={city === 'Chengdu' && 'Active'}
 							>
 								Chengdu
@@ -144,6 +145,8 @@ function Home() {
 				weatherType={weatherType}
 				windSpeed={windSpeed}
 			/>
+
+			<footer id="copyright"></footer>
 		</main>
 	);
 }
