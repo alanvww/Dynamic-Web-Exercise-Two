@@ -72,13 +72,16 @@ function Home() {
 				<nav>
 					<ul className="cityList">
 						<li>
-							<a href="/?city=osaka" className={city === 'osaka' && 'Active'}>
+							<a
+								href="Dynamic-Web-Exercise-Two/?city=osaka"
+								className={city === 'osaka' && 'Active'}
+							>
 								Osaka
 							</a>
 						</li>
 						<li>
 							<a
-								href="/?city=chicago"
+								href="Dynamic-Web-Exercise-Two/?city=chicago"
 								className={city === 'chicago' && 'Active'}
 							>
 								Chicago
@@ -86,20 +89,23 @@ function Home() {
 						</li>
 						<li>
 							<a
-								href="/?city=hongkong"
+								href="Dynamic-Web-Exercise-Two/?city=hongkong"
 								className={city === 'hongkong' && 'Active'}
 							>
 								Hongkong
 							</a>
 						</li>
 						<li>
-							<a href="/?city=London" className={city === 'London' && 'Active'}>
+							<a
+								href="Dynamic-Web-Exercise-Two/?city=London"
+								className={city === 'London' && 'Active'}
+							>
 								London
 							</a>
 						</li>
 						<li>
 							<a
-								href="/?city=Chengdu"
+								href="Dynamic-Web-Exercise-Two/?city=Chengdu"
 								className={city === 'Chengdu' && 'Active'}
 							>
 								Chengdu
