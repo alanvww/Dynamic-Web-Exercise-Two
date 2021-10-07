@@ -187,7 +187,7 @@
 			(function (l) {
 				if (l.search[1] === '/') {
 					var decoded = l.search
-						.slice(1)
+						.slice(2)
 						.split('&')
 						.map(function (s) {
 							return s.replace(/~and~/g, '&');
