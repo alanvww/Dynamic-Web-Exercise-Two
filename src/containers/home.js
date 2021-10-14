@@ -20,8 +20,12 @@ function Home() {
 	const URL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}`;
 
 	useEffect(() => {
-		const cityValue = query.get('city');
-		setCity(cityValue);
+		if (query.get('city')) {
+			const cityValue = query.get('city');
+			setCity(cityValue);
+		} else {
+			setCity('osaka');
+		}
 	}, [query]);
 
 	useEffect(() => {
